@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "FptFVYaWY08L2ICpbmFm0q2CS4OMhTA8BndhRWJAAVaTp8Lz9zPqsweRFdZhtDx+lgxRAI/sCjUDSgc6YAR4Pg==",
+  "success": true,
+  "projectFilePath": "/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/CalorieCounter.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://progetna11.atlas.cm.com/nuget/DevLib'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}

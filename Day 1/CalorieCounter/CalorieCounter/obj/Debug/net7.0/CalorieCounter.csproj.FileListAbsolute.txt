@@ -1,0 +1,16 @@
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/bin/Debug/net7.0/input.txt
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/bin/Debug/net7.0/CalorieCounter
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/bin/Debug/net7.0/CalorieCounter.deps.json
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/bin/Debug/net7.0/CalorieCounter.runtimeconfig.json
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/bin/Debug/net7.0/CalorieCounter.dll
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/bin/Debug/net7.0/CalorieCounter.pdb
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/obj/Debug/net7.0/CalorieCounter.csproj.AssemblyReference.cache
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/obj/Debug/net7.0/CalorieCounter.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/obj/Debug/net7.0/CalorieCounter.AssemblyInfoInputs.cache
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/obj/Debug/net7.0/CalorieCounter.AssemblyInfo.cs
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/obj/Debug/net7.0/CalorieCounter.csproj.CoreCompileInputs.cache
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/obj/Debug/net7.0/CalorieCounter.dll
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/obj/Debug/net7.0/refint/CalorieCounter.dll
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/obj/Debug/net7.0/CalorieCounter.pdb
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/obj/Debug/net7.0/CalorieCounter.genruntimeconfig.cache
+/Users/Phillip.Stewart/Code/AdventOfCode2022/Day 1/CalorieCounter/CalorieCounter/obj/Debug/net7.0/ref/CalorieCounter.dll
