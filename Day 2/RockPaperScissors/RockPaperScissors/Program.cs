@@ -1,6 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
+using System;
 using RockPaperScissors;
 using System.Globalization;
+using System.IO;
 
 Part1();
 
