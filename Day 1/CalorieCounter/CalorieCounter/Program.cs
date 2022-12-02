@@ -8,6 +8,44 @@ namespace CalorieCounter
     {
         static void Main(string[] args)
         {
+            Part_1();
+            
+            Part_2();
+
+            Console.ReadKey();
+        }
+
+        static void Part_1()
+        {
+            using var inputStream = new StreamReader("input.txt");
+
+            int maxElfCalories = 0;
+
+            int currentCalCount = 0;
+            while (!inputStream.EndOfStream)
+            {
+                var line = inputStream.ReadLine();
+
+                if (int.TryParse(line, out int calValue))
+                {
+                    currentCalCount = currentCalCount + calValue;
+                }
+                
+                // If we have finished calculating the elf's total calories, 
+                // compare against current max
+                if (string.IsNullOrEmpty(line) && currentCalCount != 0)
+                {
+                    maxElfCalories = Math.Max(maxElfCalories, currentCalCount);
+                    currentCalCount = 0;
+                }
+            }
+
+            
+            Console.WriteLine($"Top calories holder: {maxElfCalories}");
+        }
+
+        static void Part_2()
+        {
             using var inputStream = new StreamReader("input.txt");
 
             PriorityQueue<int, int> calorieMinHeap = new PriorityQueue<int, int>();
