@@ -37,10 +37,9 @@ void PartTwo()
 
         var commonChars = FindCommonCharacterInListOfStringSets(FindCommonCharacterInListOfStringSets(sets[0], sets[1]), sets[2]);
 
-        foreach(var c in commonChars)
-        {
-            score = score + CalculateItemScore(c);
-        }
+        var c = commonChars.First();
+
+        score = score + CalculateItemScore(c);
     }
 
     Console.WriteLine($"Score Part 2: {score}");
