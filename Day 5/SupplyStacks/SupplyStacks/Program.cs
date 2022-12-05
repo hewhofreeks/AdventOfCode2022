@@ -1,5 +1,6 @@
 ﻿
 using SupplyStacks;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -26,14 +27,13 @@ void ParseInputAndMoveCrates(CrateMover crateMover)
     // Account for empty line
     input.ReadLine();
 
-    while (!input.EndOfStream)
+    var instructions = ReadInstructionsFromStream(input);
+
+    foreach(var instruction in instructions)
     {
-        var numbersInInstructions = Regex.Matches(input.ReadLine(), @"\d+").Select(s => int.Parse(s.Value)).ToArray();
-
-        var fromIndex = numbersInInstructions[1] - 1;
-        var toIndex = numbersInInstructions[2] - 1;
-
-        crateMover.MoveCrates(numbersInInstructions[0], supplyStack.ElementAt(fromIndex), supplyStack.ElementAt(toIndex));
+        crateMover.MoveCrates(instruction.NumCratesToMove, 
+            supplyStack.ElementAt(instruction.StackIndexToMoveFrom), 
+            supplyStack.ElementAt(instruction.StackIndexToMoveTo));
     }
 
     StringBuilder sb = new StringBuilder();
@@ -108,3 +108,40 @@ IList<Stack<char>> CreateSupplyStack(StreamReader input)
     return supplystack;
 }
 
+IEnumerable<MoveInstruction> ReadInstructionsFromStream(StreamReader reader)
+{
+    List<MoveInstruction> instructions = new List<MoveInstruction>();
+
+    while (!reader.EndOfStream)
+    {
+        instructions.Add(ParseInstructionsForMove(reader.ReadLine()));
+    }
+
+    return instructions;
+}
+
+MoveInstruction ParseInstructionsForMove(string line)
+{
+    var numbersInInstructions = Regex.Matches(line, @"\d+").Select(s => int.Parse(s.Value)).ToArray();
+
+    var fromIndex = numbersInInstructions[1] - 1;
+    var toIndex = numbersInInstructions[2] - 1;
+
+    return new MoveInstruction(numbersInInstructions[0], fromIndex, toIndex);
+}
+
+struct MoveInstruction
+{
+    public MoveInstruction(int numCratesToMove, int fromIndex, int toIndex)
+    {
+        NumCratesToMove = numCratesToMove;
+        StackIndexToMoveFrom= fromIndex;
+        StackIndexToMoveTo = toIndex;
+    }
+
+    public int NumCratesToMove { get; }
+
+    public int StackIndexToMoveFrom { get; set; }
+
+    public int StackIndexToMoveTo { get; set; }
+}
