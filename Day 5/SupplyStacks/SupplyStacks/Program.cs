@@ -95,12 +95,12 @@ IList<Stack<char>> CreateSupplyStack(StreamReader input)
     }
 
     List<Stack<char>> supplystack = new List<Stack<char>>();
-    // Reverse our queue into a stack
-    foreach (var queue in supplies)
+    // Create our new stack based on initial input
+    foreach (var holdingStack in supplies)
     {
         Stack<char> stack = new Stack<char>();
 
-        while (queue.TryPop(out char c))
+        while (holdingStack.TryPop(out char c))
             stack.Push(c);
 
         supplystack.Add(stack);
