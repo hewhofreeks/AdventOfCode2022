@@ -27,9 +27,7 @@ void ParseInputAndMoveCrates(CrateMover crateMover)
     // Account for empty line
     input.ReadLine();
 
-    var instructions = ReadInstructionsFromStream(input);
-
-    foreach(var instruction in instructions)
+    foreach(var instruction in ReadInstructionsFromStream(input))
     {
         crateMover.MoveCrates(instruction.NumCratesToMove, 
             supplyStack.ElementAt(instruction.StackIndexToMoveFrom), 
@@ -110,14 +108,10 @@ IList<Stack<char>> CreateSupplyStack(StreamReader input)
 
 IEnumerable<MoveInstruction> ReadInstructionsFromStream(StreamReader reader)
 {
-    List<MoveInstruction> instructions = new List<MoveInstruction>();
-
     while (!reader.EndOfStream)
     {
-        instructions.Add(ParseInstructionsForMove(reader.ReadLine()));
+        yield return ParseInstructionsForMove(reader.ReadLine());
     }
-
-    return instructions;
 }
 
 MoveInstruction ParseInstructionsForMove(string line)
