@@ -108,11 +108,6 @@ class Rope
                 break;
         }
 
-        knotToMove = knotToMove.Next;
-
-        knotToMove.ValueRef.X = previousHeadPosition.X;
-        knotToMove.ValueRef.Y = previousHeadPosition.Y;
-
         do
         {
             knotToMove = knotToMove.Next;
@@ -120,11 +115,21 @@ class Rope
             var delta = GetDelta(knotToMove.Value, knotToMove.Previous.Value);
 
             var oldNode = knotToMove.Value;
-            if(Math.Abs(delta.x) > 1)
+            if (Math.Abs(delta.x) > Math.Abs(delta.y) && Math.Abs(delta.x) > 1)
+            {
                 knotToMove.ValueRef.X = knotToMove.Value.X + (delta.x > 0 ? -1 : 1);
-            if(Math.Abs(delta.y) > 1)
+                knotToMove.ValueRef.Y = knotToMove.Previous.Value.Y;
+            }
+            else if (Math.Abs(delta.y) > Math.Abs(delta.x) && Math.Abs(delta.y) > 1)
+            {
+                knotToMove.ValueRef.X = knotToMove.Previous.Value.X;
                 knotToMove.ValueRef.Y = knotToMove.Value.Y + (delta.y > 0 ? -1 : 1);
-
+            }
+            else if (Math.Abs(delta.y) == Math.Abs(delta.x) && Math.Abs(delta.x) == 2)
+            {
+                knotToMove.ValueRef.X = knotToMove.Value.X + (delta.x > 0 ? -1 : 1);
+                knotToMove.ValueRef.Y = knotToMove.Value.Y + (delta.y > 0 ? -1 : 1);
+            }
             previousHeadPosition = oldNode;
 
         } while (knotToMove.Next != null);
